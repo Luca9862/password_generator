@@ -4,18 +4,16 @@ import tkinter
 import threading
 
 def generate_password(length):
-    # Definisci i caratteri che saranno utilizzati per generare la password
     characters = string.ascii_letters + string.digits + string.punctuation
 
-    # Mescola i caratteri in modo casuale
     password = ''.join(random.choice(characters) for _ in range(length))
     return password
 
 def start():
     selected_number = int(input.get())
     password = generate_password(selected_number)
-    output.delete(1.0, tkinter.END)  # Cancella il testo precedente nell'elemento di testo
-    output.insert(tkinter.END, password)  # Inserisci la password generata nell'elemento di testo
+    output.delete(1.0, tkinter.END) 
+    output.insert(tkinter.END, password)
 
 root = tkinter.Tk()
 root.title("Password generator by Luca Canali")
